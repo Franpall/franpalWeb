@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franpal DEV</title>
+    <link rel="stylesheet" href="stylesart.css">
+    <link rel="shortcut icon" href="Resources/LogoVectorial.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,600&family=Pixelify+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fondo"></div>
+    <header>
+        <div id="MenuHamburguesa" class="burgerShow">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger" onclick="return abrirMenu()">
+                <span></span>
+                <span></span>
+              </label>
+        </div>
+        <a class="Logotipo" href="index.html">
+            <img src="Resources/LogoVectorial.svg" alt="logo de franpal" >
+            <h1>Franpal DEV</h1>
+        </div>
+        <div class="relleno">
+
+        </div>
+        <div id="menu" class="navBar">
+            <nav>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="articulo4.html">Anterior</a></li>
+                    <li><a href="articulo5.html" class="seleccionado">Artículo 5</a></li>
+                    <p>Llegaste al artículo final</p>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <article class="articulo">
+                <div class="imagen"><img src="Resources/articulo5/portada.png" alt="ss de franpal store web"></div>
+                <h2>Angar AJ E-Commerce</h2>
+                <br>
+                <p>
+                    Sitio Web de venta y administración de productos hecha con el framework Flask, PostgreSQL. 
+                    Cuenta con Roles de Usuario, Generación de Reportes personalizables (ordenar por fecha, precio, alfabeto, etc) en formato PDF, Administración de Categorias, Productos, Cuentas y Ventas, además de filtrado de tablas para encontrar elementos fácilmente.
+                </p>
+                <br>
+                <p>
+                    Fue Realizada por los siguientes Técnicos Superiores en Informática:
+                </p>
+                <br>
+                <ul class="lista_autores">
+                    <li>Francisco Skopal (FRANPAL)</li>
+                    <li>Keiver Calderón (Kiba)</li>
+                </ul>
+                <h3>EQUIPO</h3>
+                <div class="estadisticasArea">
+                    <div class="card">
+                        <div class="header">Aportes</div>
+                        <div class="body">
+                            <div class="skill">
+                                <div class="skill-name html">FRANPAL</div>
+                                <div class="skill-level">
+                                <div style="width: 50%" class="skill-percent"></div>
+                                </div>
+                                <div class="skill-percent-number">50%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name js">KIBA</div>
+                                <div class="skill-level">
+                                <div style="width: 50%" class="skill-percent"></div>
+                                </div>
+                                <div class="skill-percent-number">50%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Responsividad</h3>
+                En Franpal Dev (colaboración con KIBA) sabemos que la experiencia de usuario debe ser excelente sin importar desde qué dispositivo visite el sitio web, es por esto que nos enfocamos en ofrecer un diseño totalmente responsivo.
+                <div class="switch-container">
+                    <span class="switch-label">Mobile</span>
+                    <label class="switch">
+                    <input type="checkbox" id="modeSwitch">
+                    <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">PC</span>
+                </div>
+                <div class="galeriaDark">
+                    <div class="nozoom">
+                        <img id="varImgSwitch" src="Resources/articulo5/mobileView.png" alt="" >
+                    </div>
+                </div>
+                <h3>Modos</h3>
+                <p>Existen 2 Modos principales (cliente y administrador).
+                    Cabe destacar que la app cuenta con múltiples validaciones, comprobaciones de seguridad y un efectivo sistema de notificaciones que mantiene al usuario informado en todo momento </p>
+                <br>
+                <div class="galeriaDark">
+                    <div id="f1" class="nozoom" onclick="return zoom(1)">
+                        <img src="Resources/articulo5/ss2.png" alt="" >
+                        <p class="mensajeImgOff" id="mensajeImg1">Click en cualquier area para cerrar</p>
+                    </div>
+                    <div id="f2" class="nozoom" onclick="return zoom(2)">
+                        <img src="Resources/articulo5/portada.png" alt="" >
+                        <p class="mensajeImgOff" id="mensajeImg2">Click en cualquier area para cerrar</p>
+                    </div>
+                    <!-- <div id="f3" class="nozoom" onclick="return zoom(3)">
+                        <img src="Resources/articulo4/franpalStore3.jpg" alt="" >
+                        <p class="mensajeImgOff" id="mensajeImg2">Click en cualquier area para cerrar</p>
+                    </div> -->
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div class="barraNavegacion">
+        <div class="boton_back">
+            <a href="index.html">
+                Atrás
+            </a>
+        </div>
+        <div class="direccion">
+            <p>Franpal DEV/Proyectos/AngarAJ</p>
+        </div>
+    </div>
+    <footer>
+        <p>Franpal DEV - Todos los Derechos Reservados <b id="currentDate"></b></p>
+    </footer>
+    <script>
+        const modeSwitch = document.getElementById("modeSwitch");
+        modeSwitch.addEventListener("change", () => {
+        if (modeSwitch.checked) {
+            var elemento = document.getElementById("varImgSwitch");
+            elemento.src = "Resources/articulo5/pcView.png"
+        } else {
+            var elemento = document.getElementById("varImgSwitch");
+            elemento.src = "Resources/articulo5/mobileView.png"
+        }
+        });
+    </script>
+</body>
+<script src="burgermenu.js"></script>
+<script src="scripts.js"></script>
+</html>
+
+
